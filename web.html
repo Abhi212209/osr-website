@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Om Sai Ki Rasoi | OSR</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="c.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="OSR Logo" class="brand-logo">
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#restaurant">Restaurant</a>
+    <a href="#hotel">Hotel</a>
+    <a href="#banquet">Banquet</a>
+    <a href="#contact">Contact</a>
+    <button class="nav-btn" onclick="openBooking()">Book Now</button>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h2>Fine Dining · Luxury Stay · Grand Celebrations</h2>
+    <p>Experience Elegance at Om Sai Ki Rasoi, Prayagraj</p>
+    <button class="primary-btn" onclick="openBooking()">Book Now</button>
+  </div>
+
+  <div class="hero-img hover-box">
+    <img src="background.png" alt="OSR Hero" onclick="openImageModal(this)">
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="card">
+    <h3>Welcome to OSR – A Landmark of Hospitality in Prayagraj</h3>
+    <p>
+      Located conveniently on M.G. Road near the High Court, Om Sai Ki Rasoi (OSR) is Prayagraj’s premier destination for exquisite vegetarian dining, comfortable luxury lodging, and unforgettable events. Whether you are hosting a grand wedding, seeking a peaceful weekend retreat, or craving authentic multi-cuisine flavors, OSR delivers world-class service with traditional Indian warmth.
+    </p>
+  </div>
+</section>
+
+<section id="restaurant" class="section soft-bg">
+  <h3 class="section-title">Our Cuisine</h3>
+
+  <div class="card-grid">
+    <div class="menu-card hover-box">
+      <img src="menu1.png" alt="North Indian" onclick="openImageModal(this)">
+      <h4>North Indian Special</h4>
+      <p>Savor the rich, authentic spices of North India. From creamy Dal Makhani to Lajawaab Koftas, our signature dishes are crafted to perfection.</p>
+    </div>
+
+    <div class="menu-card hover-box">
+      <img src="menu2.png" alt="South Indian" onclick="openImageModal(this)">
+      <h4>South Indian Thali</h4>
+      <p>Crispy dosas, fluffy idlis, and authentic chutneys. Experience the true, comforting taste of South India right here in UP.</p>
+    </div>
+
+    <div class="menu-card hover-box">
+      <img src="menu3.png" alt="Chinese" onclick="openImageModal(this)">
+      <h4>Chinese Cuisine</h4>
+      <p>A perfect blend of fiery woks and aromatic spices. Dive into our incredibly popular Indo-Chinese starters and sizzling platters.</p>
+    </div>
+  </div>
+</section>
+
+<section id="hotel" class="section">
+  <div class="split">
+    <div class="image-box hover-box">
+      <img src="room.jpeg" alt="Hotel Room" onclick="openImageModal(this)">
+    </div>
+
+    <div class="text-box">
+      <h3>Luxury Hotel Rooms</h3>
+      <p>
+        After a busy day exploring the city or attending meetings, retreat to our premium hotel rooms. Featuring modern amenities, plush bedding, 24/7 room service, and impeccable hygiene, OSR offers a tranquil oasis in the bustling Civil Lines district.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="banquet" class="section soft-bg">
+  <div class="split reverse">
+    <div class="image-box hover-box">
+      <img src="banquet.jpeg" alt="Banquet" onclick="openImageModal(this)">
+    </div>
+
+    <div class="text-box">
+      <h3>Grand Banquet Hall</h3>
+      <p>
+        Make your weddings, receptions, ring ceremonies, and corporate events truly spectacular. Our fully air-conditioned banquet hall offers elegant décor, customizable catering menus, and ample parking space to ensure your celebration is flawless
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="card">
+    <h3>Contact Us</h3>
+    <p>📍 11A/9/1, near High Court, M G Road, Civil Lines, Prayagraj</p>
+    <p>📞 <a href="tel:+917705011220">+91 77050 11220</a></p>
+    <br>
+    <button class="primary-btn" onclick="openBooking()">Send us a Message / Book</button>
+  </div>
+</section>
+
+<footer>
+  © 2026 Om Sai Ki Rasoi (OSR). All Rights Reserved.
+</footer>
+
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeBooking()">×</span>
+    <h3>Book / Contact Us</h3>
+
+    <form id="bookingForm" onsubmit="sendToWhatsApp(event)">
+      <select id="inquiryType" required>
+        <option value="">Select Inquiry Type</option>
+        <option value="Table Reservation">Table Reservation</option>
+        <option value="Hotel Room">Hotel Room</option>
+        <option value="Banquet Event">Banquet Event</option>
+        <option value="General Inquiry">General Inquiry</option>
+      </select>
+
+      <input type="text" id="userName" placeholder="Your Name" required>
+      <input type="tel" id="userPhone" placeholder="Phone Number" required>
+      <input type="date" id="bookingDate" required>
+      
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+</div>
+
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeImageModal()">×</span>
+  <img class="modal-content-img" id="expandedImg">
+</div>
+
+<script src="m.js"></script>
+</body>
+</html>
