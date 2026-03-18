@@ -241,65 +241,122 @@ footer {
 /* =========================================
    MOBILE RESPONSIVENESS (Phones & Tablets)
    ========================================= */
+/* =========================================
+   MOBILE RESPONSIVENESS (Expert Fixes)
+   ========================================= */
 
 @media (max-width: 768px) {
-  /* 1. Adjust Navbar */
+  /* 1. Navbar: Compact & Centered */
   .navbar {
-    flex-direction: column;
-    padding: 15px 20px;
-    gap: 15px;
+    flex-direction: column; /* Stack logo and nav vertically */
+    padding: 15px 10px;
+    gap: 10px;
     text-align: center;
   }
   
   nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    justify-content: center; /* Center the links */
+    flex-wrap: wrap; /* Wrap links if they are too long */
+    gap: 5px; /* Compact spacing */
   }
   
   nav a {
     margin: 0 5px;
-    font-size: 14px;
+    font-size: 14px; /* Slightly smaller for mobile */
   }
 
-  /* 2. Stack the Hero Section */
+  /* 2. Hero Section: Fixed Height & Better Stacking */
   .hero {
-    flex-direction: column;
-    padding: 120px 20px 40px; /* Extra top padding so nav doesn't overlap */
+    height: auto; /* Let content dictate height */
+    min-height: unset; /* Remove full-screen height constraint */
+    flex-direction: column; /* Stack elements: Text over Image */
+    padding: 80px 20px 40px; /* Reduced padding, adjusted top padding to account for navbar */
     text-align: center;
-    height: auto;
-    gap: 40px;
+    gap: 30px; /* Space between text and image */
+  }
+
+  .hero-text {
+    width: 100%; /* Take full width */
+    margin-top: 0;
   }
 
   .hero-text h1 {
-    font-size: 36px; /* Smaller font for phones */
+    font-size: 32px; /* Scales down from desktop size */
+    margin-bottom: 10px;
   }
 
-  /* 3. Reduce spacing on the sides */
+  .hero-text p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .hero-img {
+    width: 100%; /* Take full width */
+    height: auto;
+    max-height: 300px; /* Prevents the image from being too huge */
+    border-radius: 20px; /* Slightly rounded corners for mobile */
+  }
+
+  /* 3. Reduce spacing on other sections */
   .section {
-    padding: 50px 20px;
+    padding: 50px 15px; /* Space-efficient padding on sides */
+  }
+  
+  .card {
+    padding: 25px 15px; /* Compact card content */
+  }
+  
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
   }
 
-  /* 4. Stack the Hotel and Banquet sections (50% becomes 100%) */
+  /* 4. Hotel/Banquet Split: Stack Images and Text */
   .split, .split.reverse {
-    flex-direction: column;
+    flex-direction: column; /* Always stack on mobile */
     text-align: center;
-    gap: 20px;
+    gap: 15px;
   }
 
   .image-box, .text-box {
-    width: 100%;
+    width: 100%; /* Take full width */
   }
 
   .image-box {
-    height: 250px; /* Adjust image height for mobile */
+    height: 250px; /* Standardized height for stacked images */
   }
 
-  /* 5. Fix form sizing so it doesn't overflow */
+  /* 5. FIX: Large, Clearly Visible Booking Modal (The Dialog Box) */
+  .modal {
+    padding: 10px; /* Small buffer from screen edges */
+    align-items: flex-start; /* Start modal from top on mobile */
+  }
+
   .modal-content {
-    width: 90%;
-    padding: 30px 20px;
+    width: 100%; /* Fill container width (minus modal padding) */
+    max-width: 100%; /* Force it large */
+    padding: 40px 20px; /* Increased internal padding for comfort */
+    border-radius: 20px; /* Cleaner radius */
+    max-height: 90vh; /* Don't exceed screen height, leave some margin */
+    overflow-y: auto; /* Crucial: Enable scrolling within the modal if form is long */
+  }
+  
+  .modal-content h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  /* 6. Form Optimizations for Conversion */
+  .modal-content input,
+  .modal-content select,
+  .modal-content button {
+    font-size: 16px; /* **ESSENTIAL:** Prevents iOS auto-zooming on inputs, which ruins UX */
+    padding: 14px; /* Large, tappable areas */
+    margin-bottom: 15px;
+  }
+  
+  .modal-content button {
+    border-radius: 10px;
   }
 }
 
