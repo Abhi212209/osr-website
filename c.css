@@ -359,22 +359,3 @@ footer {
     border-radius: 10px;
   }
 }
-
-#imageModal .close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  color: white;
-  font-size: 40px;
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes zoomIn {
-  from {transform: scale(0.8);}
-  to {transform: scale(1);}
-}
